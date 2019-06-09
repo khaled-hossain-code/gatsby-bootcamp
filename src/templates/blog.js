@@ -15,6 +15,7 @@ export const query = graphql`
     }
   }
 `
+
 const Blog = (props) => {
   const {frontmatter, html } = props.data.markdownRemark;
 

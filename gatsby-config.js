@@ -7,8 +7,8 @@
 module.exports = {
   /* siteMetadata is used for user specific datas like email twitter handler etc */
   siteMetadata: {
-    title: 'Full-Stack Bootcamp',
-    author: 'Khaled Hossain'
+    title: "Full-Stack Bootcamp",
+    author: "Khaled Hossain",
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -16,9 +16,24 @@ module.exports = {
       resolve: `gatsby-source-filesystem`, //serve all static files in src folder
       options: {
         name: `src`,
-        path: `${__dirname}/src/`
-      }
+        path: `${__dirname}/src/`,
+      },
     },
-    "gatsby-transformer-remark", // transform markdown file to html
+    "gatsby-plugin-sharp", //this one is used to modify images
+    {
+      resolve: "gatsby-transformer-remark", // transform markdown file to html
+      options: {
+        plugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 750,
+              linkImagesToOriginal: false
+            },
+          },
+        ],
+      },
+    },
   ],
 }
