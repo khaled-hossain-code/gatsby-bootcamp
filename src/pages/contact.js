@@ -1,8 +1,14 @@
 import React from "react"
 import Layout from "../components/layout"
+import Head from "../components/Head"
 
 const Contact = () => {
-  return <Layout>Contact Page</Layout>
+  return (
+    <Layout>
+      <Head title="Contact" />
+      Contact Page
+    </Layout>
+  )
 }
 
 export default Contact
